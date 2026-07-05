@@ -20,7 +20,7 @@
 
 ```bash
 # 1. 克隆
-git clone https://github.com/yourname/ktp-exam-downloader.git
+git clone https://github.com/SJH946/ktp-exam-downloader.git
 cd ktp-exam-downloader
 
 # 2. 安装依赖
