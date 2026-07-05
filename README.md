@@ -104,7 +104,6 @@ python ktp_exam_downloader.py -a 138xxxx -p 123456 -c 路基路面 -o ./output
 | `myscore` | 你的得分 |
 | `explanation` | 解析 |
 
-**无需额外加密，明文密码即可登录。**
 
 ## 📦 依赖
 
