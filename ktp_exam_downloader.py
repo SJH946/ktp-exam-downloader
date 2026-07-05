@@ -188,14 +188,14 @@ def build_markdown(coursename: str, chapters: list, client: KetangpaiClient, cou
             md_lines.append(f"{question}\n")
 
             options = subj.get("options", [])
-            answer_id = subj.get("answer", "")
-            my_answer_id = subj.get("myanswer", "")
+            answer_ids = subj.get("answer", "").split("|") if subj.get("answer") else []
+            my_answer_ids = subj.get("myanswer", "").split("|") if subj.get("myanswer") else []
 
             for opt in options:
                 oid = opt.get("id", "")
                 otext = client.clean_html(opt.get("title", ""))
-                is_correct = oid == answer_id
-                is_mine = oid == my_answer_id
+                is_correct = oid in answer_ids
+                is_mine = oid in my_answer_ids
 
                 if is_correct and is_mine:
                     md_lines.append(f"- [x] **{otext}** ✅ ← 你的答案（正确）\n")
